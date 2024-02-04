@@ -3,7 +3,7 @@ An ultra low-power management board for meshtastic solar repeater devices.
 
 ## Overview
 
-This repository contains the design proposal and of a power management board for ultra low power embedded devices. The board features a solar charger circuit with Maximum Power Point Tracking (MPPT) for 5V solar panels, two DC-DC converters, a load switch control with adjustable hysteresis and an external Watch Dog Timer.
+This repository contains the design proposal of a power management board for ultra low power embedded devices. The board features a solar charger circuit with Maximum Power Point Tracking (MPPT) for 5V solar panels, two DC-DC converters, a load switch control with adjustable hysteresis and an external Watch Dog Timer.
 
 
 ## Why did I start this project?
