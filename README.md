@@ -31,7 +31,7 @@ Supercapacitors are known for their resilience to temperature variations, making
 6. Energy Density:
 Batteries typically have higher energy density, meaning they can store more energy per unit of volume or weight. If the IoT device requires long periods of operation without recharging, a battery might be a more suitable choice.
 
-In summary, the choice between supercapacitors and batteries for powering IoT devices depends on the specific requirements of the application. Supercapacitors may be a better choice for applications that require high power density, quick charge/discharge cycles, and long cycle life, while batteries may be preferable when higher energy density and longer operating periods without recharging are crucial. Each technology has its own strengths and limitations, and the decision should be based on the specific needs and constraints of the IoT deployment.
+In summary, the choice between supercapacitors and batteries for powering IoT devices depends on the specific requirements of the application. Supercapacitors may be a better choice for applications that require high power density, quick charge/discharge cycles, and long cycle life, while batteries may be preferable when higher energy density and longer operating periods without recharging are crucial. Each technology has its own strengths and limitations, and the decision should be based on the specific needs and constraints of the IoT deployment.  
 
 
 ## IMPORTANT
@@ -51,13 +51,13 @@ IMPORTANT: this board has been specifically designed to handle 5V solar panels a
 
 ## Solar Charger Circuit
 
-The solar charger circuit is designed to efficiently charge a battery using 5V solar panels. It incorporates Maximum Power Point Tracking (MPPT) to optimize the energy harvesting from the solar panels.
+The solar charger circuit is designed to efficiently charge a battery using 5V solar panels. It incorporates Maximum Power Point Tracking (MPPT) to optimize the energy harvesting from the solar panels. **TO BE DEVELOPED**
 
 ## DC-DC Converters
 
 ### Boost Converter
 
-The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage. It is based on a [TPS610981](https://www.ti.com/lit/ds/symlink/tps610985.pdf?ts=1706487312837&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it into 3.3V one.  
+The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage **ONLY**. It is based on a [TPS610981](https://www.ti.com/lit/ds/symlink/tps610985.pdf?ts=1706487312837&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it into 4.3V one.  
 This boost converter features a very low start-up voltage (0.7) and Iq=2uA when operating.
 
 ### Buck-Boost Converter
@@ -66,7 +66,12 @@ The second DC-DC converter is a buck-boost converter designed to supply power to
 
 ## UVLO - Schmitt Trigger Control
 
-The project includes a Schmitt trigger control for a load switch with adjustable hysteresis. This feature enables precise control of the load switch, allowing for flexibility in turning on and off the connected devices based on the application's requirements.
+The project includes an UVLO circuit with with adjustable hysteresis that enables or disables a load switch. This feature allows the load switch, to turn ON the main [Buck-Boost Converter](#buck-boost-converter) to power the RAK431 or another microcontroller.  
+
+Since the supercapacitor bank I have at the moment (250F x 5.4V) already comes with an extra PCB to protect them against overvoltages higher than 5V, and for [this simulation](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEBOaBmAHAFgOyQ2AGwJhZaREiERIKQgICmAtGGAFACGIaATPfwwNeQwSCFZ0UcPHghJCJDGQqcdWXEKFkaGbPYB3Hv3DJeIXryynzkLjwTnKJJ4XHyp9MBoHQVZ9Vl+SBxdBSRvfSM+LzNjej4oQ3jjB3NEuzAEXRxCITBclBFwQoEGBnYsnOwLDCFkQgE66VsKoxwa3hxzM3zS5Nz8uIamoTsjXpK3FSd+9pq0SGsXcDdxkEHV+kdRfCSCp2LCazBi1jWNj0Vy+lvoJAA1AHsAGwAXTgBzRmSxNnNLCdTkkjICbBYrOBgXYAEpbEDnLzAxHSejkDy6W5Qe7sABOUwRRC8hWYDWkjUCdnxBTczAwxIu9B0GjxBMoNKo1jRxCiBJRRMJjRBfLJHLpt2SHIZqySnwJxwJ9NRkpJSrQjgRSvW6vM4rSyqMUos3QNxtaXQBkPWFoh1hituFf2Bp3y0MlRxOxX+SSe4BlXksyBo2PgEASKGkyB47CAA), I chose 3V for the upper limit and 1V for the lower one.  
+
+Since it's my intention to make the supercapacitor charge up to a voltage value close to the maximum, the final version will have a lock-in voltage closer to 5V or 5.4V if I get a bank without the overvoltage protection. The lower limit of the hysterisis windows will be kept at 1V.  
+In order to avoid flickering of the output when the supercap voltage reaches the lock-in and -out values, an SR latch based on NOR gates will either SET and keep the output to HIGH when the lock-in voltage is reached and reset its output when reaching the lock-out value.
 
 ## Getting Started
 
