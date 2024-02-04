@@ -1,12 +1,13 @@
-# suntastic
-An ultra low-power management board for IoT devices
+# Suntastic
+An ultra low-power management board for meshtastic solar repeater devices.
 
 ## Overview
 
-This repository contains the design and documentation of a power management board for ultra low power embedded devices. The board features a solar charger circuit with Maximum Power Point Tracking (MPPT) for 5V solar panels, two DC-DC converters, and a Schmitt trigger control for a load switch with adjustable hysteresis.  
+This repository contains the design and documentation of a power management board for ultra low power embedded devices. The board features a solar charger circuit with Maximum Power Point Tracking (MPPT) for 5V solar panels, two DC-DC converters, a load switch control with adjustable hysteresis and an external Watch Dog Timer.
 
 
 ## Why did I start this board?
+
 ### MPPT is a must
 I recently started working with [Meshtastic](https://meshtastic.org/) and decided to deploy solar powered repeaters based on the WisBlock Core module that contains a RAK4631. So far it's been recommended to use this core module with any of the available base boards, however after inspecting [RAK's 19007](https://store.rakwireless.com/products/rak19007-wisblock-base-board-2nd-gen) base board, I noticed that the battery charging stage based on the [TP4054](https://www.laskakit.cz/user/related_files/tp4054.pdf) is not performing any kind of optimization to maximize the power available from the solar input.  
 
@@ -35,10 +36,15 @@ Batteries typically have higher energy density, meaning they can store more ener
 
 In summary, the choice between supercapacitors and batteries for powering IoT devices depends on the specific requirements of the application. Supercapacitors may be a better choice for applications that require high power density, quick charge/discharge cycles, and long cycle life, while batteries may be preferable when higher energy density and longer operating periods without recharging are crucial. Each technology has its own strengths and limitations, and the decision should be based on the specific needs and constraints of the IoT deployment.  
 
-### External watchdog timers are sometimes needed
+### External Watchdog timers are sometimes needed
 For IoT devices deployed in remote areas, the incorporation of an external watchdog timer becomes even more critical due to the challenges associated with limited accessibility and maintenance. Remote locations often entail harsh environmental conditions and restricted physical access, making it challenging to address issues promptly. The watchdog timer becomes a crucial asset in such scenarios as it autonomously monitors the device's operational state and intervenes in the case of failures. This capability ensures that even if a device experiences a software glitch or hardware malfunction, it can autonomously reset itself, mitigating potential downtime without requiring manual intervention.  
 
 The reliability and self-correcting nature of an external watchdog timer contribute significantly to the overall resilience of IoT devices in remote deployments, enhancing their ability to function autonomously and maintain consistent operation in challenging and hard-to-reach environments.
+
+### Reduce the current consumption of all the additional electronics
+The recommended Wisblock base board RAK19007 contains extra electronics that are not really necessary once the RAK4631 core module has been correctly configured and flashed. This extra electronics however, do imply extra power consumption.  
+
+Once the core is flashed it only needs a proper 3.3V power source.
 
 ## IMPORTANT
 IMPORTANT: this board has been specifically designed to handle 5V solar panels and supercapacitors up to a voltage of 5.4V max.
