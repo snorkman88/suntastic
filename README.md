@@ -62,7 +62,7 @@ This boost converter features a very low start-up voltage (0.7) and Iq=2uA when 
 
 ### Buck-Boost Converter
 
-The second DC-DC converter is a buck-boost converter designed to supply power to the IoT device running on 3.3V. It ensures a stable and regulated voltage output, accommodating variations in solar panel output.
+The second DC-DC converter is a buck-boost converter designed to supply power to the IoT device running on 3.3V.
 
 ## UVLO - Schmitt Trigger Control
 
@@ -79,6 +79,7 @@ For the voltage references, it's yet to be defined if specific high-precision vo
 
 For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/ds/symlink/sn74aup2g02.pdf?ts=1706885625366&ref_url=https%253A%252F%252Fwww.google.com%252F) NOR gates will be used.  
 
+The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
 
 ## Getting Started
 
