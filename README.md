@@ -93,6 +93,9 @@ For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/d
 
 The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
 
+## Watchdog timer
+The external watchdog timer that will trigger a reset will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument
+
 ## Getting Started
 
 To replicate or contribute to this project,
