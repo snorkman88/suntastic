@@ -48,7 +48,7 @@ The reliability and self-correcting nature of an external watchdog timer contrib
 
 
 ## IMPORTANT
-IMPORTANT: this board has been specifically designed to handle 5V solar panels and supercapacitors up to a voltage of 5.4V max.
+IMPORTANT: this board has been specifically thought to handle 5V solar panels and supercapacitors up to a voltage of 5.4V max.
 
 ## Table of Contents
 
