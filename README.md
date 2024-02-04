@@ -6,7 +6,7 @@ An ultra low-power management board for meshtastic solar repeater devices.
 This repository contains the design proposal and of a power management board for ultra low power embedded devices. The board features a solar charger circuit with Maximum Power Point Tracking (MPPT) for 5V solar panels, two DC-DC converters, a load switch control with adjustable hysteresis and an external Watch Dog Timer.
 
 
-## Why did I start this board?
+## Why did I start this project?
 
 ### MPPT is a must
 I recently started working with [Meshtastic](https://meshtastic.org/) and decided to deploy solar powered repeaters based on the WisBlock Core module that contains a RAK4631. So far it's been recommended to use this core module with any of the available base boards, however after inspecting [RAK's 19007](https://store.rakwireless.com/products/rak19007-wisblock-base-board-2nd-gen) base board, I noticed that the battery charging stage based on the [TP4054](https://www.laskakit.cz/user/related_files/tp4054.pdf) is not performing any kind of optimization to maximize the power available from the solar input.  
