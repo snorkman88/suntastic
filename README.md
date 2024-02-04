@@ -56,6 +56,7 @@ IMPORTANT: this board has been specifically designed to handle 5V solar panels a
   - [Boost Converter](#boost-converter)
   - [Buck-Boost Converter](#buck-boost-converter)
 - [UVLO - Schmitt Trigger Control](#schmitt-trigger-control)
+- [External Watchdog timer](#watchdog-timer)
 - [Getting Started](#getting-started)
 - [License](#license)
 
@@ -93,7 +94,7 @@ For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/d
 
 The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
 
-## Watchdog timer (WDT)
+## Watchdog timer
 The external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
 
 For this feature to be fully functional **CHANGES IN THE NODE'S FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.
