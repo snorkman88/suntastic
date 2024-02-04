@@ -1,4 +1,4 @@
-# Suntastic
+# DRAFT: Suntastic
 An ultra low-power management board for meshtastic solar repeater devices.
 
 ## Overview
