@@ -77,6 +77,9 @@ The circuit consists of two [TLV3691](https://www.ti.com/lit/ds/symlink/tlv3691.
 
 For the voltage references, it's yet to be defined if specific high-precision voltage references like [REF35](https://www.ti.com/lit/ds/symlink/ref35.pdf?ts=1706804680495&ref_url=https%253A%252F%252Fwww.ti.com%252Fpower-management%252Fvoltage-reference%252Fseries-voltage-reference%252Fproducts.html) will be used or simply get those reference values from a voltage divider. **Current consumption reduction is PRIORITY.**
 
+For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/ds/symlink/sn74aup2g02.pdf?ts=1706885625366&ref_url=https%253A%252F%252Fwww.google.com%252F) NOR gates will be used.  
+
+
 ## Getting Started
 
 To replicate or contribute to this project,
