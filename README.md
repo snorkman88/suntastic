@@ -102,7 +102,7 @@ The external watchdog timer that will trigger a reset in case of a software bug/
 For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.  
 
 ## Monitoring the current voltage on the supercapacitor
-A voltage divider must be connected to Pin40 (P0.05/AIN3) of the RAK4631.
+A voltage divider must be connected to Pin40 (P0.05/AIN3) of the RAK4631.  
 **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED TOO** in order to properly reflect the current voltage value on the supercapacitor based on the resistors of the voltage divider.
 
 ## Getting Started
