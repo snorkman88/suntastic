@@ -58,6 +58,7 @@ IMPORTANT: this board has been specifically designed to handle 5V solar panels a
   - [Buck-Boost Converter](#buck-boost-converter)
 - [UVLO - Schmitt Trigger Control](#schmitt-trigger-control)
 - [External Watchdog timer](#watchdog-timer)
+- [Monitoring of the voltage seen on the accumulator]()
 - [Getting Started](#getting-started)
 - [License](#license)
 
@@ -98,7 +99,11 @@ The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.
 ## Watchdog timer
 The external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
 
-For this feature to be fully functional **CHANGES IN THE NODE'S FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.
+For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.  
+
+## Monitoring the current voltage on the supercapacitor
+A voltage divider must be connected to Pin40 (P0.05/AIN3) of the RAK4631.
+**CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED TOO** in order to properly reflect the current voltage value on the supercapacitor based on the resistors of the voltage divider.
 
 ## Getting Started
 
