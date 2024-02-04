@@ -13,6 +13,11 @@ I recently started working with [Meshtastic](https://meshtastic.org/) and decide
 
 In contrast to linear chargers, MPPT chargers excel in extracting energy from solar panels under conditions such as partial shading, changing light angles, and fluctuating weather conditions. This adaptability is crucial for maximizing energy harvesting in real-world scenarios. By efficiently managing the charging process, MPPT helps prevent overcharging or undercharging of the accumulators in small IoT devices. This contributes to extending the overall lifespan of the battery, reducing the frequency of maintenance or battery replacement, and enhancing the device's reliability.  
 
+### Reduce the current consumption of all the additional electronics
+The recommended Wisblock base board RAK19007 contains extra electronics that are not really necessary once the RAK4631 core module has been correctly configured and flashed. This extra electronics however, do imply extra power consumption.  
+
+Once the core is flashed it only needs a proper 3.3V power source.
+
 ### Supercapacitors as main energy storage
 Another point that motivated the start of this project is the use of supercapacitors instead of conventional LiPo or LiFePo batteries. Whether supercapacitors are better than batteries for IoT devices depends on the specific requirements of the application. Here are some factors to consider:
 
@@ -41,10 +46,6 @@ For IoT devices deployed in remote areas, the incorporation of an external watch
 
 The reliability and self-correcting nature of an external watchdog timer contribute significantly to the overall resilience of IoT devices in remote deployments, enhancing their ability to function autonomously and maintain consistent operation in challenging and hard-to-reach environments.
 
-### Reduce the current consumption of all the additional electronics
-The recommended Wisblock base board RAK19007 contains extra electronics that are not really necessary once the RAK4631 core module has been correctly configured and flashed. This extra electronics however, do imply extra power consumption.  
-
-Once the core is flashed it only needs a proper 3.3V power source.
 
 ## IMPORTANT
 IMPORTANT: this board has been specifically designed to handle 5V solar panels and supercapacitors up to a voltage of 5.4V max.
