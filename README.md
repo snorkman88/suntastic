@@ -41,6 +41,8 @@ Supercapacitors are known for their resilience to temperature variations, making
 6. Energy Density:
 Batteries typically have higher energy density, meaning they can store more energy per unit of volume or weight. If the IoT device requires long periods of operation without recharging, a battery might be a more suitable choice.
 
+![supercaps](https://github.com/snorkman88/suntastic/blob/main/screenshots/supercaps_with_ov_protection.jpeg)  
+
 In summary, the choice between supercapacitors and batteries for powering IoT devices depends on the specific requirements of the application. Supercapacitors may be a better choice for applications that require high power density, quick charge/discharge cycles, and long cycle life, while batteries may be preferable when higher energy density and longer operating periods without recharging are crucial. Each technology has its own strengths and limitations, and the decision should be based on the specific needs and constraints of the IoT deployment.  
 
 ### External Watchdog timers are sometimes needed
@@ -75,6 +77,7 @@ The solar charger circuit is designed to efficiently charge an accumulator using
 ### Boost Converter
 
 The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage **ONLY**. It is based on a [TPS610981](https://www.ti.com/lit/ds/symlink/tps610985.pdf?ts=1706487312837&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it to a 4.3V one.  
+![boost_43](https://github.com/snorkman88/suntastic/blob/main/screenshots/boost_4.3v.png)  
 This boost converter features a very low start-up voltage (0.7) and Iq=2uA when in operation.
 
 ### Buck-Boost Converter
