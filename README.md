@@ -83,7 +83,7 @@ The second DC-DC converter is a buck-boost converter in charge of supplying powe
 This converter should start operating after the load switch controlled by the UVLO is closed.  
 **TO BE CONTINUED**
 
-### Why did I add two DC-DC converters?
+### Why are there two DC-DC converters?
 It is desirable that the UVLO control circuit starts operating as early as possible if there is enough input power (around Vin=0.7V) and BEFORE any other electronic device. The opposite behaviour is also desired. In other words, when the input voltage coming from the accumulator decreases, the UVLO should be last part that is turned off.
 
 Since it's expected that the control stage consumes only a few microamps when operating, the output voltage of 4.3V should remain steady while the accumulator (i.e: supercapacitor) continues to charge. Once the voltage seen accross the terminals of the accumulator reaches the lock-in voltage, the second converter and microcontroller will be energised.
