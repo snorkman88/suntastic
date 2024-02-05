@@ -116,7 +116,7 @@ For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE A
 
 ## Monitoring the current voltage on the supercapacitor
 A voltage divider must be connected to Pin40 (P0.05/AIN3) of the RAK4631.  
-**CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED TOO** in order to properly reflect the current voltage value on the supercapacitor based on the resistors of the voltage divider.
+**CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED TOO** in order to properly reflect the current voltage value on the supercapacitor based on the resistors ratio from the voltage divider.
 
 ## Getting Started
 
