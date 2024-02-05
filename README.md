@@ -95,7 +95,10 @@ The project includes an UVLO circuit with with adjustable hysteresis that enable
 
 Since the supercapacitor bank I have at the moment (250F x 5.4V) already comes with an extra PCB to protect them against overvoltages higher than 5V, and for [this simulation only](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEBOaBmAHAFgOyQ2AGwJhZaREiERIKQgICmAtGGAFACGIaATPfwwNeQwSCFZ0UcPHghJCJDGQqcdWXEKFkaGbPYB3Hv3DJeIXryynzkLjwTnKJJ4XHyp9MBoHQVZ9Vl+SBxdBSRvfSM+LzNjej4oQ3jjB3NEuzAEXRxCITBclBFwQoEGBnYsnOwLDCFkQgE66VsKoxwa3hxzM3zS5Nz8uIamoTsjXpK3FSd+9pq0SGsXcDdxkEHV+kdRfCSCp2LCazBi1jWNj0Vy+lvoJAA1AHsAGwAXTgBzRmSxNnNLCdTkkjICbBYrOBgXYAEpbEDnLzAxHSejkDy6W5Qe7sABOUwRRC8hWYDWkjUCdnxBTczAwxIu9B0GjxBMoNKo1jRxCiBJRRMJjRBfLJHLpt2SHIZqySnwJxwJ9NRkpJSrQjgRSvW6vM4rSyqMUos3QNxtaXQBkPWFoh1hituFf2Bp3y0MlRxOxX+SSe4BlXksyBo2PgEASKGkyB47CAA), a value of 3V was chosen for the upper limit and 1V for the lower one.  
 
-Since it's the intention to make the supercapacitor charge up to a voltage value close to the maximum, the final version will have a lock-in voltage closer to 5V or 5.4V if I get a bank without the overvoltage protection.  
+Since it's the intention to make the supercapacitor charge up to a voltage value close to the maximum, the final version will have a lock-in voltage closer to 5V or 5.4V if I get a bank without the overvoltage protection. Having a high value for lock-in voltage (ergo high amount of charge) also contributes to comply with the power-on reset rise times in supply voltage for the microcontroller.
+
+If the voltage supplied to the core module drops low enough that the device shuts down, it may not be able to power back up by itself without removing and reconnecting the voltage supply, either manually or by automation.
+
 The lower limit of the hysterisis window will be kept at 1V and.
 In order to avoid flickering of the output when the supercap voltage reaches the lock-in and -out values, an SR latch based on NOR gates will either SET (and keep it HIGH even if the input flickers) when the lock-in voltage is reached; and RESET its output when reaching the lock-out value.  
 
@@ -107,10 +110,11 @@ For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/d
 
 The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
 
-In summary this circuit makes sure the embedded device stays de-energised until the supercapacitor is fully charged
+In summary this circuit makes sure the embedded device stays de-energised until the supercapacitor is fully charged.
 
-## Watchdog timer
-The external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
+## Watchdog timer  
+
+An external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
 
 For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.  
 
