@@ -121,7 +121,7 @@ An external watchdog timer will issue a reset in case of a software bug/glitch o
 
 The DONE signal resets the counter of the watchdog only. If the DONE signal is received when the WAKE is still high, the WAKE will go low as soon as the DONE is recognized.
 ![external_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/tpl5010.gif)
-For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a DONE pulse to reset the counter of the  WDT.  
+For this feature to be fully functional, two GPIO pins and **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to monitor the WAKE signal and generate a DONE pulse to reset the counter of the  WDT.  
 Images taken from the datasheet.  
 
 ## Monitoring the current voltage on the supercapacitor
