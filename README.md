@@ -117,10 +117,12 @@ If for any unforeseen reason, the voltage supplied to the core module drops low 
 
 An external watchdog timer will issue a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
 
-The DONE signal resets the counter of the watchdog only. If the DONE signal is received when the WAKE is still high, the WAKE will go low as soon as the DONE is recognized. The WAKE signal, would not be used.  
+![description_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/wdt_description.png)  
+
+The DONE signal resets the counter of the watchdog only. If the DONE signal is received when the WAKE is still high, the WAKE will go low as soon as the DONE is recognized.
+![external_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/tpl5010.gif)
 For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a DONE pulse to reset the counter of the  WDT.  
-![external_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/tpl5010.gif)  
-Image taken from the datasheet.  
+Images taken from the datasheet.  
 
 ## Monitoring the current voltage on the supercapacitor
 Also mentioned in [this thread](https://meshtastic.discourse.group/t/running-rak4631-without-the-rak19007/7021/21). A voltage divider must be connected to Pin40 (P0.05/AIN3) of the RAK4631.  
