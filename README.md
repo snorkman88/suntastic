@@ -97,8 +97,6 @@ Since the supercapacitor bank I have at the moment (250F x 5.4V) already comes w
 
 Since it's the intention to make the supercapacitor charge up to a voltage value close to the maximum, the final version will have a lock-in voltage closer to 5V or 5.4V if I get a bank without the overvoltage protection. Having a high value for lock-in voltage (ergo high amount of charge) also contributes to comply with the power-on reset rise times in supply voltage for the microcontroller.
 
-If the voltage supplied to the core module drops low enough that the device shuts down, it may not be able to power back up by itself without removing and reconnecting the voltage supply, either manually or by automation.
-
 The lower limit of the hysterisis window will be kept at 1V and.
 In order to avoid flickering of the output when the supercap voltage reaches the lock-in and -out values, an SR latch based on NOR gates will either SET (and keep it HIGH even if the input flickers) when the lock-in voltage is reached; and RESET its output when reaching the lock-out value.  
 
@@ -114,7 +112,9 @@ In summary this circuit makes sure the embedded device stays de-energised until 
 
 ## Watchdog timer  
 
-An external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
+If for any unforeseen reason, the voltage supplied to the core module drops low enough that the device shuts down or to a level that causes a brown-out, it may not be able to resume its normal operation by itself without external intervention (manually or by automation) that either removes and reconnects the voltage supply or issues a reset.  
+
+An external watchdog timer will issue a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
 
 For this feature to be fully functional, **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to periodically generate a pulse to reset the counter of the  WDT.  
 
