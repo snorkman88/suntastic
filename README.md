@@ -129,7 +129,3 @@ Also mentioned in [this thread](https://meshtastic.discourse.group/t/running-rak
 ![voltage_divider](https://github.com/snorkman88/suntastic/blob/main/screenshots/voltage_divider_input.png)  
 
 **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED TOO** in order to properly reflect the current voltage value on the supercapacitor based on the resistors ratio from the voltage divider.
-
-## Getting Started
-
-To replicate or contribute to this project,
