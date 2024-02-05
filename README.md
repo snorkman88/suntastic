@@ -68,7 +68,7 @@ IMPORTANT: this board has been specifically thought to handle 5V solar panels an
 
 ## Solar Charger Circuit
 
-The solar charger circuit is designed to efficiently charge a battery using 5V solar panels. It incorporates Maximum Power Point Tracking (MPPT) to optimize the energy harvesting from the solar panels. **TO BE DEVELOPED**
+The solar charger circuit is designed to efficiently charge an accumulator using 5V solar panels. It incorporates Maximum Power Point Tracking (MPPT) to optimize the energy harvesting from the solar panels. **TO BE DEVELOPED**
 
 ## DC-DC Converters
 
@@ -79,11 +79,13 @@ This boost converter features a very low start-up voltage (0.7) and Iq=2uA when 
 
 ### Buck-Boost Converter
 
-The second DC-DC converter is a buck-boost converter designed to supply power to the IoT device running on 3.3V.
+The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V bus to which the IoT device (RAK4631) is connected to.  
+In comparison to the previously presented boost converter
+**TO BE DEVELOPED**
 
 ## UVLO - Schmitt Trigger Control
 
-The project includes an UVLO circuit with with adjustable hysteresis that enables or disables a load switch. The load connected to this load switch will be the main [Buck-Boost Converter](#buck-boost-converter) to power the RAK431 or another microcontroller.  
+The project includes an UVLO circuit with with adjustable hysteresis that enables or disables a load switch. The load connected to the switch will be the main [Buck-Boost Converter](#buck-boost-converter) that feeds power the RAK431 or another microcontroller.  
 
 Since the supercapacitor bank I have at the moment (250F x 5.4V) already comes with an extra PCB to protect them against overvoltages higher than 5V, and for [this simulation only](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEBOaBmAHAFgOyQ2AGwJhZaREiERIKQgICmAtGGAFACGIaATPfwwNeQwSCFZ0UcPHghJCJDGQqcdWXEKFkaGbPYB3Hv3DJeIXryynzkLjwTnKJJ4XHyp9MBoHQVZ9Vl+SBxdBSRvfSM+LzNjej4oQ3jjB3NEuzAEXRxCITBclBFwQoEGBnYsnOwLDCFkQgE66VsKoxwa3hxzM3zS5Nz8uIamoTsjXpK3FSd+9pq0SGsXcDdxkEHV+kdRfCSCp2LCazBi1jWNj0Vy+lvoJAA1AHsAGwAXTgBzRmSxNnNLCdTkkjICbBYrOBgXYAEpbEDnLzAxHSejkDy6W5Qe7sABOUwRRC8hWYDWkjUCdnxBTczAwxIu9B0GjxBMoNKo1jRxCiBJRRMJjRBfLJHLpt2SHIZqySnwJxwJ9NRkpJSrQjgRSvW6vM4rSyqMUos3QNxtaXQBkPWFoh1hituFf2Bp3y0MlRxOxX+SSe4BlXksyBo2PgEASKGkyB47CAA), a value of 3V was chosen for the upper limit and 1V for the lower one.  
 
@@ -98,6 +100,8 @@ For the voltage references, it's yet to be defined if specific high-precision vo
 For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/ds/symlink/sn74aup2g02.pdf?ts=1706885625366&ref_url=https%253A%252F%252Fwww.google.com%252F) NOR gates will be used. These gates will also be powered by the 4.3V bus.
 
 The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
+
+In summary this circuit makes sure the embedded device stays de-energised until the supercapacitor is fully charged
 
 ## Watchdog timer
 The external watchdog timer that will trigger a reset in case of a software bug/glitch or brownout will be a [TPL5010](https://www.ti.com/lit/ds/symlink/tpl5010.pdf?ts=1706954677109&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instrument.  
