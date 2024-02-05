@@ -79,7 +79,7 @@ This boost converter features a very low start-up voltage (0.7) and Iq=2uA when 
 
 ### Buck-Boost Converter
 
-The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V bus to which the IoT device (RAK4631) is connected to.  
+The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V to which the IoT device (RAK4631) and watchdog timer are connected to.  
 This converter should start operating after the load switch controlled by the UVLO is closed.  
 **TO BE CONTINUED**
 
