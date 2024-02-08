@@ -84,9 +84,9 @@ It is possible to set the maximum output current according to charging requireme
 
 ### Boost Converter
 
-The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage **ONLY**. It is based on a [TPS610981](https://www.ti.com/lit/ds/symlink/tps610985.pdf?ts=1706487312837&ref_url=https%253A%252F%252Fwww.google.com%252F) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it to a 4.3V one.  
-![boost_43](https://github.com/snorkman88/suntastic/blob/main/screenshots/boost_4.3v.png)  
-This boost converter features a very low start-up voltage (0.7) and Iq=2uA when in operation.
+The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage **ONLY**. It is based on a [TPS61202](https://www.sparkfun.com/datasheets/Prototyping/tps61200.pdf) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it to a 5V one.  
+![boost_5v](https://github.com/snorkman88/suntastic/blob/main/screenshots/boost_5v.png)  
+This boost converter features a very low start-up voltage (0.5V) and Iq=50uA when in operation.
 
 ### Buck-Boost Converter
 
