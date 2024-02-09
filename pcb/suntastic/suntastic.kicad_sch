@@ -73,7 +73,7 @@
     (property "Sheetname" "UVLO with latched output" (at 167.64 28.4984 0) (show_name)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "uvlo_and latch.kicad_sch" (at 167.64 65.3546 0) (show_name)
+    (property "Sheetfile" "uvlo_and_latch.kicad_sch" (at 167.64 65.3546 0) (show_name)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
