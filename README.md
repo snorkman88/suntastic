@@ -86,11 +86,14 @@ It is possible to set the maximum output current according to charging requireme
 
 The first DC-DC converter that is presented is a boost converter responsible for energizing the control stage **ONLY**. It is based on a [TPS61202](https://www.sparkfun.com/datasheets/Prototyping/tps61200.pdf) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it to a 5V one.  
 ![boost_5v](https://github.com/snorkman88/suntastic/blob/main/screenshots/boost_5v.png)  
-This boost converter features a very low start-up voltage (0.5V) and Iq=50uA when in operation.
+This boost converter features a very low start-up voltage (0.5V) and Iq=50uA when in operation.  
+For the very first version of this board, in order to save schematic, and PCB design time it would be ideal to use a ready-to-use board like the Pololu [U1V10F5](https://thepihut.com/products/pololu-5v-step-up-voltage-regulator-u1v10f5).
+
+For more info about this module visit [Pololu Site](https://www.pololu.com/product/2564)
 
 ### Buck-Boost Converter
 
-The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V to which the IoT device (RAK4631) and watchdog timer are connected to.  
+The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V to which the IoT device (in this case the WisBlock RAK4631) and watchdog timer are connected to.  
 This converter should start operating after the load switch controlled by the UVLO is closed.  
 **TO BE CONTINUED**
 
