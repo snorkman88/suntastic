@@ -63,9 +63,6 @@ IMPORTANT: this board has been specifically thought to handle 5V solar panels an
 - [UVLO - Schmitt Trigger Control](#schmitt-trigger-control)
 - [External Watchdog timer](#watchdog-timer)
 - [Monitoring of the voltage seen on the accumulator]()
-- [Getting Started](#getting-started)
-- [License](#license)
-
 
 
 ## Solar Charger Circuit
@@ -93,14 +90,14 @@ For more info about this module visit [Pololu Site](https://www.pololu.com/produ
 
 ### Buck-Boost Converter
 
-The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V to which the IoT device (in this case the WisBlock RAK4631) and watchdog timer are connected to.  
+The second DC-DC converter is a buck-boost converter in charge of supplying power to the 3.3 V bus to which the IoT device (in this case the WisBlock RAK4631) and watchdog timer are connected.  
 This converter should start operating after the load switch controlled by the UVLO is closed.  
 **TO BE CONTINUED**
 
 ### Why are there two DC-DC converters?
 It is desirable that the UVLO control circuit starts operating as early as possible if there is enough input power (around Vin=0.7V) and BEFORE any other electronic device. The opposite behaviour is also desired. In other words, when the input voltage coming from the accumulator decreases, the UVLO should be last part that is turned off.
 
-Since it's expected that the control stage consumes only a few microamps when operating, the output voltage of 4.3V should remain steady while the accumulator (i.e: supercapacitor) continues to charge. Once the voltage seen accross the terminals of the accumulator reaches the lock-in voltage, the second converter, external watchdog timer and microcontroller will be energised.
+Since it's expected that the control stage consumes only a few microamps when operating, the output voltage of 5V should remain steady while the accumulator (i.e: supercapacitor) continues to charge. Once the voltage seen accross the terminals of the accumulator reaches the lock-in voltage, the second converter, external watchdog timer and microcontroller will be energised.
 
 
 ## UVLO - Schmitt Trigger Control
@@ -112,11 +109,11 @@ Since the supercapacitor bank I have at the moment (250F x 5.4V) already comes w
 Since it's the intention to make the supercapacitor charge up to a voltage value close to the maximum, the final version will have a lock-in voltage closer to 5V or 5.4V if I get a bank without the overvoltage protection. The lower limit of the hysterisis window will be kept at 1V.  
 In order to avoid flickering of the output when the supercap voltage reaches the lock-in and -out values, an SR latch based on NOR gates will either SET (and keep it HIGH even if the input flickers) when the lock-in voltage is reached; and RESET its output when reaching the lock-out value.  
 
-The circuit consists of two [TLV3691](https://www.ti.com/lit/ds/symlink/tlv3691.pdf?ts=1706791844150&ref_url=https%253A%252F%252Fwww.google.com%252F) nano-power comparators powered by the 4.3V bus.  
+The circuit consists of two [TLV3691](https://www.ti.com/lit/ds/symlink/tlv3691.pdf?ts=1706791844150&ref_url=https%253A%252F%252Fwww.google.com%252F) nano-power comparators powered by the 5V bus.  
 
 For the voltage references, it's yet to be defined if specific high-precision voltage references like [REF35](https://www.ti.com/lit/ds/symlink/ref35.pdf?ts=1706804680495&ref_url=https%253A%252F%252Fwww.ti.com%252Fpower-management%252Fvoltage-reference%252Fseries-voltage-reference%252Fproducts.html) will be used or simply get those reference values from a voltage divider. **Current consumption reduction is PRIORITY.**
 
-For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/ds/symlink/sn74aup2g02.pdf?ts=1706885625366&ref_url=https%253A%252F%252Fwww.google.com%252F) NOR gates will be used. These gates will also be powered by the 4.3V bus.
+For the latching of the output, low power [SN74AUP2G02](https://www.ti.com/lit/ds/symlink/sn74aup2g02.pdf?ts=1706885625366&ref_url=https%253A%252F%252Fwww.google.com%252F) NOR gates will be used. These gates will also be powered by the 5V bus.
 
 The load switch will be a [TPS22917](https://www.ti.com/lit/ds/symlink/tps22917.pdf?ts=1706648579344&ref_url=https%253A%252F%252Fwww.google.com%252F).
 
