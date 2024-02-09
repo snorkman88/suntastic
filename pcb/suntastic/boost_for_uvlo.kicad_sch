@@ -14,7 +14,6 @@
   )
 
 
-
   (text "This is the output voltage that feeds\nthe UVLO circuit ONLY"
     (at 154.94 48.26 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
