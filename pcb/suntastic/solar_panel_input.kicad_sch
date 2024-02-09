@@ -1,0 +1,16 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 09ae47bd-534c-477e-ba98-013c5f098d30)
+
+  (paper "A4")
+
+  (title_block
+    (title "5V/5W Max Solar panel input")
+    (date "2024-02-07")
+    (rev "1")
+  )
+
+  (lib_symbols
+  )
+
+)

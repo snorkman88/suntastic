@@ -1,0 +1,31 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 52ce4ec2-913c-4da2-9ad5-d75fb8d8dfaf)
+
+  (paper "A4")
+
+  (title_block
+    (title "DC-DC boost converter for UVLO")
+    (date "2024-02-07")
+    (rev "1")
+  )
+
+  (lib_symbols
+  )
+
+
+
+  (text "This is the output voltage that feeds\nthe UVLO circuit ONLY"
+    (at 154.94 48.26 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2d92c179-588a-496e-af36-62c8bef55bcb)
+  )
+
+  (global_label "V_boost_uvlo" (shape input) (at 153.67 50.8 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 4709b2ea-98e6-493a-8b2d-31da8e8e982c)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 168.7312 50.8 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+)

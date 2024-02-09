@@ -1,0 +1,16 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid d528aeca-789f-4a06-a3a4-df2c2a47f83a)
+
+  (paper "A4")
+
+  (title_block
+    (title "5W Max - MPPT Charger")
+    (date "2024-02-07")
+    (rev "1")
+  )
+
+  (lib_symbols
+  )
+
+)

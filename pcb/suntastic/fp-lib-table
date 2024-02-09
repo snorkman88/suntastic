@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "suntastic_footprints")(type "KiCad")(uri "${KIPRJMOD}/suntastic_footprints")(options "")(descr ""))
+)
