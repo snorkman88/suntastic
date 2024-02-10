@@ -3,4 +3,5 @@
   (lib (name "TLV3691IDCKR")(type "KiCad")(uri "${KIPRJMOD}/suntastic_symbols/TLV3691IDCKR.kicad_sym")(options "")(descr ""))
   (lib (name "ref35")(type "KiCad")(uri "${KIPRJMOD}/suntastic_symbols/ref35.kicad_sym")(options "")(descr ""))
   (lib (name "TC7WH02FU")(type "KiCad")(uri "${KIPRJMOD}/suntastic_symbols/TC7WH02FU.kicad_sym")(options "")(descr ""))
+  (lib (name "FBB04004-F40S1003K6M")(type "KiCad")(uri "${KIPRJMOD}/suntastic_symbols/FBB04004-F40S1003K6M.kicad_sym")(options "")(descr ""))
 )
