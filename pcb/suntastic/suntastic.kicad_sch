@@ -235,6 +235,23 @@
     )
   )
 
+  (sheet (at 229.235 127.635) (size 52.705 30.48) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid fadcfaa3-5ba9-44dc-a564-21a258e74f25)
+    (property "Sheetname" "Buck-Boost for main load" (at 229.235 126.9234 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "buck_boost_load.kicad_sch" (at 229.235 158.6996 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "suntastic"
+        (path "/4d5a6178-89d6-4824-ac30-5dee40aabff2" (page "9"))
+      )
+    )
+  )
+
   (sheet_instances
     (path "/" (page "1"))
   )

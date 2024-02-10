@@ -362,6 +362,10 @@
     [
       "6649cb35-9eb9-427a-adc1-370521538cf9",
       "WisBlock Core Module - RAK4631"
+    ],
+    [
+      "fadcfaa3-5ba9-44dc-a564-21a258e74f25",
+      "Buck-Boost for main load"
     ]
   ],
   "text_variables": {}
