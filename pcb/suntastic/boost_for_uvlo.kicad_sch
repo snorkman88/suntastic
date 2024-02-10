@@ -5,7 +5,7 @@
   (paper "A4")
 
   (title_block
-    (title "DC-DC boost converter for UVLO")
+    (title "[DC-DC] boost converter for UVLO")
     (date "2024-02-07")
     (rev "1")
     (comment 1 "The start-up voltage of the IC should not be higher than 0.7V")
