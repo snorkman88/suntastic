@@ -18,7 +18,8 @@ In contrast to linear chargers, MPPT chargers excel in extracting energy from so
 ### Reduce the current consumption of all the additional electronics
 The recommended Wisblock base board RAK19007 contains extra electronics that are not really necessary once the RAK4631 core module has been correctly configured and flashed. This extra electronics however, do imply extra power consumption.  
 
-As it's been empirically proven in [this thread](https://meshtastic.discourse.group/t/running-rak4631-without-the-rak19007/7021/21) once the core is flashed, it only needs a proper 3.3V power source to start working.
+As it's been empirically proven in [this thread](https://meshtastic.discourse.group/t/running-rak4631-without-the-rak19007/7021/21) once the RAK4631 core is flashed, it only needs a proper 3.3V power source to start working.  
+However RAK actually recommends providing two voltage sources to the RAK4631, one that supplies power to the input of internal DC-DC buck converter and another 3.3V for the SX1262 chip.  
 
 ### Supercapacitors as main energy storage
 Another point that motivated the start of this project is the use of supercapacitors instead of conventional LiPo or LiFePo batteries. Whether supercapacitors are better than batteries for IoT devices depends on the specific requirements of the application. Here are some factors to consider:
@@ -128,7 +129,8 @@ An external watchdog timer will issue a reset in case of a software bug/glitch o
 ![description_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/wdt_description.png)  
 
 The DONE signal resets the counter of the watchdog only. If the DONE signal is received when the WAKE is still high, the WAKE will go low as soon as the DONE is recognized.
-![external_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/tpl5010.gif)
+![external_wdt](https://github.com/snorkman88/suntastic/blob/main/screenshots/tpl5010.gif)  
+
 For this feature to be fully functional, two GPIO pins and **CHANGES IN THE CORE MODULE FIRMWARE ARE NEEDED** to monitor the WAKE signal and generate a DONE pulse to reset the counter of the  WDT.  
 Images taken from the datasheet.  
 
