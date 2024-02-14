@@ -19,7 +19,7 @@ In contrast to linear chargers, MPPT chargers excel in extracting energy from so
 The recommended Wisblock base board RAK19007 contains extra electronics that are not really necessary once the RAK4631 core module has been correctly configured and flashed. This extra electronics however, do imply extra power consumption.  
 
 As it's been empirically proven in [this thread](https://meshtastic.discourse.group/t/running-rak4631-without-the-rak19007/7021/21) once the RAK4631 core is flashed, it only needs a proper 3.3V power source to start working.  
-However RAK actually recommends providing two voltage sources to the RAK4631, one that supplies power to the input of internal DC-DC buck converter and another 3.3V for the SX1262 chip.  
+However RAK actually recommends providing two voltage sources to the RAK4631, one that supplies power to the input of internal DC-DC buck converter and another 3.3V for the SX1262 chip. [SEE THIS POST](https://forum.rakwireless.com/t/rak4631-without-baseboard/10177/18)
 
 ### Supercapacitors as main energy storage
 Another point that motivated the start of this project is the use of supercapacitors instead of conventional LiPo or LiFePo batteries. Whether supercapacitors are better than batteries for IoT devices depends on the specific requirements of the application. Here are some factors to consider:
