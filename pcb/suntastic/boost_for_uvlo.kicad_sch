@@ -131,13 +131,13 @@
     (uuid cee45a9d-b8c9-42f7-b72b-a1cf9c1b7ba5)
   )
 
-  (text "This is a 5V output that feeds\nthe UVLO circuit and the input\nof the inernal DC-DC buck present \nin the nRF52840."
-    (at 151.13 48.26 0)
+  (text "This is a 5V output that powers:\n\n1) The UVLO circuit\n2) The internal DC-DC buck present in the nRF52840.\n3) The 3.3V regulator for the SX1262 chip.\n"
+    (at 151.13 46.99 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2d92c179-588a-496e-af36-62c8bef55bcb)
   )
   (text "The first prototype of the board will use\na ready-to-use module from Pololu U1V10F5.\nOnce the behaviour is verified, a new circuit\nshall be introduced in the second version of the PCB."
-    (at 123.19 31.75 0)
+    (at 123.825 30.48 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid aa973aff-6374-4b4f-8b8b-fa7eb766f17b)
   )
