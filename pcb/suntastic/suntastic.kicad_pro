@@ -366,6 +366,10 @@
     [
       "fadcfaa3-5ba9-44dc-a564-21a258e74f25",
       "Buck-Boost for main load"
+    ],
+    [
+      "a38aadbc-1307-4a96-a364-cee9c7cfea8a",
+      "Watchdog timer"
     ]
   ],
   "text_variables": {}
