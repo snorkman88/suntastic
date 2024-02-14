@@ -9,7 +9,7 @@
     (date "2024-02-07")
     (rev "1")
     (comment 1 "However, the larger the capacitor, the longer it will take to reach 5.2V.")
-    (comment 2 "The is no limit in the total capacitance of the bank. ")
+    (comment 2 "There is no limit in the total capacitance of the bank. ")
     (comment 3 "The MPPT charger based on the SPV1040 can output up to 5.2V and 5W max. ")
     (comment 4 "The voltage tolerated by the supercapacitor bank should be AT LEAST 5.4V.")
   )

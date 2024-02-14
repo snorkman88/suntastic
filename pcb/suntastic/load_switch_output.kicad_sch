@@ -397,6 +397,9 @@
     (uuid f65c3260-441e-40bd-a021-68209cef9d59)
   )
 
+  (no_connect (at 139.7 65.405) (uuid 6eee0927-717e-4746-bb78-ab9a5c50dc00))
+  (no_connect (at 160.02 65.405) (uuid bd1063bb-aa1b-45f8-87de-bac4831b5695))
+
   (wire (pts (xy 166.37 59.055) (xy 166.37 62.865))
     (stroke (width 0) (type default))
     (uuid 0ba2751c-2aa8-40a5-8468-4b81ad6fbe96)
@@ -472,7 +475,7 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "Vin_buck_boost" (shape input) (at 173.355 48.26 0) (fields_autoplaced)
+  (global_label "Vin_buck_boost" (shape output) (at 173.355 48.26 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 5267d4c7-0dc1-4e80-a849-ee00534dc18f)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 190.6539 48.26 0)
