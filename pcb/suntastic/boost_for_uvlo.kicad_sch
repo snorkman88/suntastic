@@ -131,7 +131,7 @@
     (uuid cee45a9d-b8c9-42f7-b72b-a1cf9c1b7ba5)
   )
 
-  (text "This is a 5V output that feeds\nthe UVLO circuit ONLY"
+  (text "This is a 5V output that feeds\nthe UVLO circuit and the input\nof the inernal DC-DC buck present \nin the nRF52840."
     (at 151.13 48.26 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2d92c179-588a-496e-af36-62c8bef55bcb)
@@ -142,7 +142,7 @@
     (uuid aa973aff-6374-4b4f-8b8b-fa7eb766f17b)
   )
 
-  (global_label "V_boost_uvlo" (shape input) (at 149.86 50.8 0) (fields_autoplaced)
+  (global_label "V_boost_uvlo" (shape output) (at 149.86 50.8 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 4709b2ea-98e6-493a-8b2d-31da8e8e982c)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 164.9212 50.8 0)
@@ -188,7 +188,7 @@
     (property "Reference" "J2" (at 140.97 38.1 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "Pololu U1V10F5" (at 139.7 40.64 90)
+    (property "Value" "Pololu U1V10F5" (at 134.62 40.64 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 143.51 43.18 0)
