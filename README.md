@@ -83,7 +83,7 @@ It is possible to set the maximum output current according to charging requireme
 ### Boost Converter
 
 The first DC-DC converter that is presented is a boost converter responsible for powering the control stage and the input of the internal DC/DC converter present in the nRF52840.  
-It is based on a [TPS61202](https://www.sparkfun.com/datasheets/Prototyping/tps61200.pdf) from Texas Instruments and takes variable voltage seen at the terminals of the accumulator (i.e a supercapacitor) and converts it to a 5V one.  
+It is based on a [TPS61202](https://www.sparkfun.com/datasheets/Prototyping/tps61200.pdf) from Texas Instruments and takes variable voltage seen at the accumulator (i.e a supercapacitor) and converts it to a 5V one.  
 ![boost_5v](https://github.com/snorkman88/suntastic/blob/main/screenshots/boost_5v.png)  
 This boost converter features a very low start-up voltage (0.5V) and Iq=50uA when in operation.  
 For the very first version of this board, in order to save schematic and PCB design time, it would be ideal to use a ready-to-use board like the Pololu [U1V10F5](https://thepihut.com/products/pololu-5v-step-up-voltage-regulator-u1v10f5).  
@@ -92,13 +92,13 @@ For more info about this module visit [Pololu Site](https://www.pololu.com/produ
 
 ### Buck-Boost Converter or LDO for obtaining 3.3V
 
-The second voltage regulator in charge of supplying power to the 3.3 V bus to which the SX1262 chip (present in the WisBlock RAK4631) and watchdog timer are connected.  
+The second voltage regulator is in charge of supplying power to the 3.3 V bus to which the SX1262 chip (present in the WisBlock RAK4631) and watchdog timer are connected.  
 This regulator should only start operating after the load switch controlled by the UVLO is closed.  
 It is very important to remark that clean power supplies are essential for RF transceivers to maintain optimal performance. RF signals are sensitive to electrical noise, and any disruptions in the power supply can lead to signal degradation.  
 
-In the case a buck-boost converter (like the TPS63020) is adopted, then it could either take as an input the variable voltage from the supercapacitor or the 5V constant output coming out of the TPS61202. This approach however, implies more work filtering of the output voltage.  
+In the case a buck-boost converter (like the TPS63020) is adopted, then it could either take as an input the variable voltage from the supercapacitor or the 5V constant output coming out of the TPS61202. This approach however, necessitates more filtering of the output voltage.  
 
-Using LDOs on the other hand, mandates to have an input votlage higher than the one desired a the output (in this case 3.3V). Ergo, connecting its input directly to the supercapacitor is not an acceptable approach.  
+Using LDOs on the other hand, requires an input votlage higher than the one desired at the output (in this case 3.3V). Ergo, connecting its input directly to the supercapacitor is not an acceptable approach.  
 Although taking 5V coming from the TPS61202 as input voltage might bring some input ripple, the PSRR of an LDO contributes to suppress it at the output.  
 In the case the output of the LDO still shows some ringing at high frequencies (usually as peaks on the waveform), ferrite beads should be placed to filter the desired frequencies.  
 
