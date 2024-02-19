@@ -131,8 +131,8 @@
     (uuid cee45a9d-b8c9-42f7-b72b-a1cf9c1b7ba5)
   )
 
-  (text "This is a 5V output that powers:\n\n1) The UVLO circuit\n2) The internal DC-DC buck present in the nRF52840.\n3) The 3.3V regulator for the SX1262 chip.\n"
-    (at 151.13 46.99 0)
+  (text "This is a 5V output that powers:\n\n1) The UVLO circuit\n2) The internal DC-DC buck present in the nRF52840.\n3) The 3.3V regulator for the SX1262 chip.\n4) The watchdog timer\n"
+    (at 150.495 47.625 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2d92c179-588a-496e-af36-62c8bef55bcb)
   )

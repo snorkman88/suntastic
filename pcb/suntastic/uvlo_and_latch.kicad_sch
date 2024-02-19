@@ -2587,7 +2587,7 @@
     (property "Value" "TC7WH02FU_LJCT" (at 233.6546 36.83 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "Package_SO:Zetex_SM8" (at 224.7646 38.1 0)
+    (property "Footprint" "Package_SO:TSSOP-8_3x3mm_P0.65mm" (at 224.7646 38.1 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://toshiba.semicon-storage.com/info/TC7WH02FU_datasheet_en_20200205.pdf?did=20119&prodName=TC7WH02FU" (at 224.7646 38.1 0)
